@@ -1,0 +1,36 @@
+project("Scarlett-Engine"
+    VERSION 1.0.0.0
+    DESCRIPTION ""
+    HOMEPAGE_URL ""
+    LANGUAGES C CXX
+)
+
+set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/CMake")
+
+set(SCARLETT_TARGET_NAME "Scarlett")
+
+if(NOT CMAKE_BUILD_TYPE)
+  set(CMAKE_BUILD_TYPE "Debug")
+endif()
+
+if (UNIX)
+    add_compile_options("$<$<CONFIG:DEBUG>:-D_DEBUG>")
+endif (UNIX)
+
+if(${PROJECT_NAME}_USE_ALT_NAMES)
+  string(TOLOWER ${PROJECT_NAME} PROJECT_NAME_LOWERCASE)
+  string(TOUPPER ${PROJECT_NAME} PROJECT_NAME_UPPERCASE)
+else()
+  set(PROJECT_NAME_LOWERCASE ${PROJECT_NAME})
+  set(PROJECT_NAME_UPPERCASE ${PROJECT_NAME})
+endif()
+
+set(CMAKE_C_STANDARD 17)
+set(CMAKE_C_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+
+add_library(${SCARLETT_TARGET_NAME})
+include(AddSources)
+include(AddDependencies)

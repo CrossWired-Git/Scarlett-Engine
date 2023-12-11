@@ -1,0 +1,15 @@
+[submodule "External/SDL2.28.x"]
+	path = External/SDL2.28.x
+	url = https://github.com/libsdl-org/SDL.git
+[submodule "External/stb"]
+	path = External/stb
+	url = https://github.com/nothings/stb.git
+[submodule "External/miniaudio"]
+	path = External/miniaudio
+	url = https://github.com/mackron/miniaudio.git
+[submodule "External/glew-cmake-stable"]
+	path = External/glew-cmake-stable
+	url = https://github.com/Perlmint/glew-cmake.git
+[submodule "External/psst_math"]
+	path = External/psst_math
+	url = https://github.com/zmij/math.git
